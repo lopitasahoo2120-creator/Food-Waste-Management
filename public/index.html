@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoodShare - Food Waste Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🍲 FoodShare</h1>
+    <div id="userBox" hidden>
+      <span id="userInfo"></span>
+      <button id="logoutBtn" class="gray">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Dashboard numbers (always visible) -->
+    <section class="stats">
+      <div class="stat"><b id="sMeals">0</b><span>Meals Saved</span></div>
+      <div class="stat"><b id="sAvail">0</b><span>Listings Available</span></div>
+      <div class="stat"><b id="sWasted">0</b><span>Meals Wasted</span></div>
+      <div class="stat"><b id="sDonors">0</b><span>Donors</span></div>
+    </section>
+
+    <p id="message"></p>
+
+    <!-- LOGIN / REGISTER -->
+    <section id="authSection" class="box">
+      <div class="two-col">
+        <form id="registerForm">
+          <h2>New here? Register</h2>
+          <input type="text" id="regName" placeholder="Name / Organisation" required>
+          <select id="regRole" required>
+            <option value="donor">Donor (restaurant, hostel, caterer)</option>
+            <option value="receiver">Receiver (NGO, shelter)</option>
+          </select>
+          <input type="tel" id="regPhone" placeholder="Phone number">
+          <button type="submit">Register</button>
+        </form>
+
+        <form id="loginForm">
+          <h2>Already registered? Login</h2>
+          <input type="number" id="loginId" placeholder="Your User ID" min="1" required>
+          <button type="submit">Login</button>
+          <p class="hint">You get your User ID when you register. Remember it!</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- DONOR PAGE -->
+    <section id="donorSection" hidden>
+      <div class="box">
+        <h2>Post Surplus Food</h2>
+        <form id="foodForm">
+          <input type="text" id="fTitle" placeholder="Food (e.g. Veg Biryani)" required>
+          <input type="number" id="fQty" placeholder="Quantity (meals)" min="1" required>
+          <input type="text" id="fLocation" placeholder="Pickup location" required>
+          <label>Expires at <input type="datetime-local" id="fExpiry" required></label>
+          <button type="submit">Post Food</button>
+        </form>
+      </div>
+      <h2>My Listings</h2>
+      <div id="donorList" class="cards"></div>
+    </section>
+
+    <!-- RECEIVER PAGE -->
+    <section id="receiverSection" hidden>
+      <h2>Available Food</h2>
+      <div id="availableList" class="cards"></div>
+      <h2>My Claims</h2>
+      <div id="claimList" class="cards"></div>
+    </section>
+  </main>
+
+  <footer>FoodShare - B.Tech Project | HTML, CSS, JavaScript, Node.js, SQLite</footer>
+  <script src="script.js"></script>
+</body>
+</html>

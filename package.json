@@ -1,0 +1,8 @@
+{
+  "name": "food-waste-management",
+  "version": "1.0.0",
+  "description": "Connects food donors with NGOs/receivers to reduce food waste",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "better-sqlite3": "^11.3.0", "express": "^4.19.2" }
+}
